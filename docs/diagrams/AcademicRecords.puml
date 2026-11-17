@@ -1,0 +1,140 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+title Деканат та успішність студентів — варіант 4
+abstract class Entity {
+  +Id : Guid {readOnly}
+}
+abstract class Person {
+  +FullName : string {readOnly}
+  {abstract} +Describe() : string
+}
+class Student {
+  +RecordBookNumber : string {readOnly}
+  +GroupName : string {readOnly}
+  +Describe() : string
+}
+class Teacher {
+  +Department : string {readOnly}
+  +Describe() : string
+}
+class Course {
+  +Title : string {readOnly}
+  +TeacherId : Guid {readOnly}
+  +Capacity : int {readOnly}
+}
+class Enrollment {
+  +StudentId : Guid {readOnly}
+  +CourseId : Guid {readOnly}
+}
+class GradeRecord {
+  +StudentId : Guid {readOnly}
+  +CourseId : Guid {readOnly}
+  +Points : int {readOnly}
+}
+Entity <|-- Person
+Person <|-- Student
+Person <|-- Teacher
+Entity <|-- Course
+Entity <|-- Enrollment
+Entity <|-- GradeRecord
+Teacher "1" -- "0..*" Course : викладає
+Student "1" -- "0..*" Enrollment
+Course "1" -- "0..*" Enrollment
+Student "1" -- "0..*" GradeRecord
+Course "1" -- "0..*" GradeRecord
+note right of GradeRecord
+  0 <= Points <= 100
+  Прохідний бал 60
+  Оцінка потребує Enrollment
+end note
+interface "IRepository<T>" as IRepository {
+  +GetAll() : IReadOnlyList<T>
+  +Get(id) : T
+  +Add(item)
+  +Update(item)
+  +Remove(id)
+}
+class "InMemoryRepository<T>" as Repository {
+  -items : List<T>
+}
+IRepository <|.. Repository
+interface IDataStore {
+  +Load() : AcademicData
+  +Save(data)
+}
+class JsonDataStore {
+  -path : string
+  +Load() : AcademicData
+  +Save(data)
+}
+IDataStore <|.. JsonDataStore
+interface "IComparer<Student>" as IComparer
+class StudentNameComparer {
+  +Compare(x, y) : int
+}
+IComparer <|.. StudentNameComparer
+class AcademicService {
+  {static} +PassingGrade : int = 60
+  +AddStudent(name, number, group) : Student
+  +UpdateStudent(id, name, number, group)
+  +RemoveStudent(id)
+  +AddTeacher(name, department) : Teacher
+  +UpdateTeacher(id, name, department)
+  +RemoveTeacher(id)
+  +AddCourse(title, teacherId, capacity) : Course
+  +UpdateCourse(id, title, teacherId, capacity)
+  +RemoveCourse(id)
+  +Enroll(studentId, courseId)
+  +Unenroll(studentId, courseId)
+  +SetGrade(studentId, courseId, points)
+  +RemoveGrade(studentId, courseId)
+  +GetResult(id) : StudentResult
+  +GetDebtors() : IReadOnlyList<StudentResult>
+  +GetScholarshipRanking() : IReadOnlyList<RankingEntry>
+  +FindStudents(query) : IReadOnlyList<Student>
+  +Export() : AcademicData
+  {static} +FromData(data) : AcademicService
+}
+class StudentResult <<record>> {
+  +Student : Student
+  +Average : decimal?
+  +EnrollmentCount : int
+  +DebtCount : int
+}
+class RankingEntry <<record>> {
+  +Rank : int
+  +Student : Student
+  +Average : decimal
+}
+class AcademicData {
+  +SchemaVersion : int
+  +Students : List<Student>
+  +Teachers : List<Teacher>
+  +Courses : List<Course>
+  +Enrollments : List<Enrollment>
+  +Grades : List<GradeRecord>
+}
+class ConsoleMenu {
+  +Run() : int
+}
+class CourseCapacityExceededException {
+  +Capacity : int
+}
+class InvalidGradeValueException {
+  +Value : int
+}
+InvalidOperationException <|-- CourseCapacityExceededException
+ArgumentException <|-- InvalidGradeValueException
+ConsoleMenu --> AcademicService
+ConsoleMenu --> IDataStore
+AcademicService --> IRepository
+AcademicService ..> StudentNameComparer
+AcademicService ..> StudentResult
+AcademicService ..> RankingEntry
+AcademicService ..> AcademicData
+AcademicService ..> CourseCapacityExceededException
+GradeRecord ..> InvalidGradeValueException
+JsonDataStore ..> AcademicData
+JsonDataStore ..> AcademicService : перевірка цілісності
+@enduml

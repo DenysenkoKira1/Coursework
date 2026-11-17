@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+data/*.json
+data/*.bak
+data/*.tmp
+.vs/

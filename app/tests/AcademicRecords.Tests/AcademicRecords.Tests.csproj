@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../../src/AcademicRecords.Core/AcademicRecords.Core.csproj" /></ItemGroup>
+</Project>

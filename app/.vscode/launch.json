@@ -1,0 +1,14 @@
+{
+  "version":"0.2.0",
+  "configurations":[{
+    "name":"Деканат — консоль",
+    "type":"coreclr",
+    "request":"launch",
+    "preLaunchTask":"Зібрати",
+    "program":"${workspaceFolder}/src/AcademicRecords.Console/bin/Release/net10.0/AcademicRecords.Console.dll",
+    "cwd":"${workspaceFolder}",
+    "console":"integratedTerminal",
+    "args":[],
+    "env":{"DOTNET_ROOT":"${workspaceFolder}/../.tools/dotnet"}
+  }]
+}

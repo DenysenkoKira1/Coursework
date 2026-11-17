@@ -1,0 +1,125 @@
+{
+  "SchemaVersion": 1,
+  "Students": [
+    {
+      "RecordBookNumber": "ІПЗ-001",
+      "GroupName": "ІПЗ-21",
+      "FullName": "Бондар Анна Олегівна",
+      "Id": "c9645f4c-bb6e-44a3-990b-0ded5353c796"
+    },
+    {
+      "RecordBookNumber": "ІПЗ-002",
+      "GroupName": "ІПЗ-21",
+      "FullName": "Мельник Максим Ігорович",
+      "Id": "a6b0fd73-ca1c-4004-bfd5-24ab16cc5b35"
+    },
+    {
+      "RecordBookNumber": "ІПЗ-004",
+      "GroupName": "ІПЗ-22",
+      "FullName": "Ткаченко Артем Сергійович",
+      "Id": "b9b08582-2d40-414a-9454-870b701cc8cc"
+    },
+    {
+      "RecordBookNumber": "ІПЗ-003",
+      "GroupName": "ІПЗ-21",
+      "FullName": "Шевченко Софія Андріївна",
+      "Id": "5d5d3d64-ed27-481f-8b74-dde96df1802c"
+    }
+  ],
+  "Teachers": [
+    {
+      "Department": "Інженерії програмного забезпечення",
+      "FullName": "Коваленко Олена Петрівна",
+      "Id": "b043b72f-5d76-4396-8543-a90062b2ccad"
+    }
+  ],
+  "Courses": [
+    {
+      "Title": "Дискретна математика",
+      "TeacherId": "b043b72f-5d76-4396-8543-a90062b2ccad",
+      "Capacity": 5,
+      "Id": "60a8f9f3-6fd0-42ae-a3d1-a5054d46e8ea"
+    },
+    {
+      "Title": "Об'єктно-орієнтоване програмування",
+      "TeacherId": "b043b72f-5d76-4396-8543-a90062b2ccad",
+      "Capacity": 3,
+      "Id": "53ad7be4-0b7e-4ae0-8185-4b43d8f933f3"
+    }
+  ],
+  "Enrollments": [
+    {
+      "StudentId": "c9645f4c-bb6e-44a3-990b-0ded5353c796",
+      "CourseId": "53ad7be4-0b7e-4ae0-8185-4b43d8f933f3",
+      "Id": "89a142c9-7f00-49dc-bdb3-d7ba56bb4cb8"
+    },
+    {
+      "StudentId": "c9645f4c-bb6e-44a3-990b-0ded5353c796",
+      "CourseId": "60a8f9f3-6fd0-42ae-a3d1-a5054d46e8ea",
+      "Id": "38cdd6e7-e4c3-4473-9508-e21a3f8af0d3"
+    },
+    {
+      "StudentId": "a6b0fd73-ca1c-4004-bfd5-24ab16cc5b35",
+      "CourseId": "53ad7be4-0b7e-4ae0-8185-4b43d8f933f3",
+      "Id": "d08a22ec-23fc-4df3-b0a3-a26e048a030d"
+    },
+    {
+      "StudentId": "a6b0fd73-ca1c-4004-bfd5-24ab16cc5b35",
+      "CourseId": "60a8f9f3-6fd0-42ae-a3d1-a5054d46e8ea",
+      "Id": "fb21affb-7808-41a8-8641-bd22e885d864"
+    },
+    {
+      "StudentId": "5d5d3d64-ed27-481f-8b74-dde96df1802c",
+      "CourseId": "53ad7be4-0b7e-4ae0-8185-4b43d8f933f3",
+      "Id": "3e0f5057-3cac-4e91-bea5-6bfc567c2d03"
+    },
+    {
+      "StudentId": "5d5d3d64-ed27-481f-8b74-dde96df1802c",
+      "CourseId": "60a8f9f3-6fd0-42ae-a3d1-a5054d46e8ea",
+      "Id": "577cd0b3-79de-4f60-9f41-16a756715b4b"
+    },
+    {
+      "StudentId": "b9b08582-2d40-414a-9454-870b701cc8cc",
+      "CourseId": "60a8f9f3-6fd0-42ae-a3d1-a5054d46e8ea",
+      "Id": "bb7135b0-f34b-4e9f-955c-07dad6ea20e6"
+    }
+  ],
+  "Grades": [
+    {
+      "StudentId": "c9645f4c-bb6e-44a3-990b-0ded5353c796",
+      "CourseId": "53ad7be4-0b7e-4ae0-8185-4b43d8f933f3",
+      "Points": 95,
+      "Id": "18d2068f-cb23-49d2-8e77-324966dfe5b8"
+    },
+    {
+      "StudentId": "c9645f4c-bb6e-44a3-990b-0ded5353c796",
+      "CourseId": "60a8f9f3-6fd0-42ae-a3d1-a5054d46e8ea",
+      "Points": 85,
+      "Id": "b8ced81f-3018-4ecf-906c-cf6ea88df12e"
+    },
+    {
+      "StudentId": "a6b0fd73-ca1c-4004-bfd5-24ab16cc5b35",
+      "CourseId": "53ad7be4-0b7e-4ae0-8185-4b43d8f933f3",
+      "Points": 80,
+      "Id": "61c5ba66-9474-4c22-8a5b-a065ef76e0d4"
+    },
+    {
+      "StudentId": "a6b0fd73-ca1c-4004-bfd5-24ab16cc5b35",
+      "CourseId": "60a8f9f3-6fd0-42ae-a3d1-a5054d46e8ea",
+      "Points": 100,
+      "Id": "2092397e-ea0d-43f0-b14f-8d449ff805e0"
+    },
+    {
+      "StudentId": "5d5d3d64-ed27-481f-8b74-dde96df1802c",
+      "CourseId": "53ad7be4-0b7e-4ae0-8185-4b43d8f933f3",
+      "Points": 59,
+      "Id": "1c328b39-e0c1-41d5-bb21-ba79e0cfd528"
+    },
+    {
+      "StudentId": "5d5d3d64-ed27-481f-8b74-dde96df1802c",
+      "CourseId": "60a8f9f3-6fd0-42ae-a3d1-a5054d46e8ea",
+      "Points": 75,
+      "Id": "5d305a37-6511-4d61-8404-675dcee0d9a3"
+    }
+  ]
+}

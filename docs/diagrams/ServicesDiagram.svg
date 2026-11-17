@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1850" height="1250" viewBox="0 0 1850 1250"><rect width="100%" height="100%" fill="white"/>
+<text x="925" y="46.239999999999995" font-family="Consolas,monospace" font-size="32" font-weight="700" text-anchor="middle" fill="#111827">UML — сервіси та залежності</text>
+<rect x="50" y="100" width="470" height="181" fill="white" stroke="#374151" stroke-width="3"/><rect x="52" y="102" width="466" height="50" fill="#edf2f7"/>
+<text x="285.0" y="134.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">ConsoleMenu</text>
+<polyline points="50,152 520,152" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="63" y="180.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">- service: AcademicService</text>
+<text x="63" y="211.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">- store: IDataStore</text>
+<polyline points="50,225 520,225" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="63" y="256.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Run(): int</text>
+<rect x="670" y="100" width="590" height="491" fill="white" stroke="#374151" stroke-width="3"/><rect x="672" y="102" width="586" height="50" fill="#edf2f7"/>
+<text x="965.0" y="134.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">AcademicService</text>
+<polyline points="670,152 1260,152" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="683" y="180.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ PassingGrade: int = 60</text>
+<text x="683" y="211.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">- _students: IRepository&lt;Student&gt;</text>
+<text x="683" y="242.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">- _teachers: IRepository&lt;Teacher&gt;</text>
+<text x="683" y="273.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">- _courses: IRepository&lt;Course&gt;</text>
+<text x="683" y="304.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">- _enrollments: IRepository&lt;Enrollment&gt;</text>
+<text x="683" y="335.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">- _grades: IRepository&lt;GradeRecord&gt;</text>
+<polyline points="670,349 1260,349" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="683" y="380.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Enroll(studentId, courseId)</text>
+<text x="683" y="411.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ SetGrade(studentId, courseId, n)</text>
+<text x="683" y="442.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ GetResult(id): StudentResult</text>
+<text x="683" y="473.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ GetScholarshipRanking()</text>
+<text x="683" y="504.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ GetDebtors()</text>
+<text x="683" y="535.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Export(): AcademicData</text>
+<text x="683" y="566.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ FromData(data): AcademicService</text>
+<rect x="50" y="610" width="470" height="172" fill="white" stroke="#374151" stroke-width="3"/><rect x="52" y="612" width="466" height="72" fill="#edf2f7"/>
+<text x="285.0" y="634.4" font-family="Consolas,monospace" font-size="20" font-weight="400" text-anchor="middle" fill="#111827">&lt;&lt;interface&gt;&gt;</text>
+<text x="285.0" y="664.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">IDataStore</text>
+<polyline points="50,684 520,684" fill="none" stroke="#374151" stroke-width="3"/>
+<polyline points="50,695 520,695" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="63" y="726.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Load(): AcademicData</text>
+<text x="63" y="757.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Save(data): void</text>
+<rect x="50" y="900" width="470" height="181" fill="white" stroke="#374151" stroke-width="3"/><rect x="52" y="902" width="466" height="50" fill="#edf2f7"/>
+<text x="285.0" y="934.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">JsonDataStore</text>
+<polyline points="50,952 520,952" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="63" y="980.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">- path: string</text>
+<polyline points="50,994 520,994" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="63" y="1025.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Load(): AcademicData</text>
+<text x="63" y="1056.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Save(data): void</text>
+<rect x="670" y="610" width="590" height="296" fill="white" stroke="#374151" stroke-width="3"/><rect x="672" y="612" width="586" height="72" fill="#edf2f7"/>
+<text x="965.0" y="634.4" font-family="Consolas,monospace" font-size="20" font-weight="400" text-anchor="middle" fill="#111827">&lt;&lt;interface&gt;&gt;</text>
+<text x="965.0" y="664.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">IRepository&lt;T&gt;</text>
+<polyline points="670,684 1260,684" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="683" y="712.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">T : Entity</text>
+<polyline points="670,726 1260,726" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="683" y="757.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ GetAll(): IReadOnlyList&lt;T&gt;</text>
+<text x="683" y="788.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Get(id): T</text>
+<text x="683" y="819.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Add(item): void</text>
+<text x="683" y="850.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Update(item): void</text>
+<text x="683" y="881.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Remove(id): void</text>
+<rect x="670" y="1030" width="590" height="101" fill="white" stroke="#374151" stroke-width="3"/><rect x="672" y="1032" width="586" height="50" fill="#edf2f7"/>
+<text x="965.0" y="1064.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">InMemoryRepository&lt;T&gt;</text>
+<polyline points="670,1082 1260,1082" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="683" y="1110.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">- items: List&lt;T&gt;</text>
+<rect x="1370" y="100" width="430" height="119" fill="white" stroke="#374151" stroke-width="3"/><rect x="1372" y="102" width="426" height="50" fill="#edf2f7"/>
+<text x="1585.0" y="134.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">StudentNameComparer</text>
+<polyline points="1370,152 1800,152" fill="none" stroke="#374151" stroke-width="3"/>
+<polyline points="1370,163 1800,163" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="1383" y="194.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Compare(x, y): int</text>
+<rect x="1370" y="390" width="430" height="141" fill="white" stroke="#374151" stroke-width="3"/><rect x="1372" y="392" width="426" height="72" fill="#edf2f7"/>
+<text x="1585.0" y="414.4" font-family="Consolas,monospace" font-size="20" font-weight="400" text-anchor="middle" fill="#111827">&lt;&lt;interface&gt;&gt;</text>
+<text x="1585.0" y="444.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">IComparer&lt;Student&gt;</text>
+<polyline points="1370,464 1800,464" fill="none" stroke="#374151" stroke-width="3"/>
+<polyline points="1370,475 1800,475" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="1383" y="506.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Compare(x, y): int</text>
+<rect x="1370" y="700" width="430" height="256" fill="white" stroke="#374151" stroke-width="3"/><rect x="1372" y="702" width="426" height="50" fill="#edf2f7"/>
+<text x="1585.0" y="734.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">AcademicData</text>
+<polyline points="1370,752 1800,752" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="1383" y="780.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ SchemaVersion: int</text>
+<text x="1383" y="811.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Students: List&lt;Student&gt;</text>
+<text x="1383" y="842.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Teachers: List&lt;Teacher&gt;</text>
+<text x="1383" y="873.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Courses: List&lt;Course&gt;</text>
+<text x="1383" y="904.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Enrollments: List&lt;...&gt;</text>
+<text x="1383" y="935.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Grades: List&lt;...&gt;</text>
+<polyline points="520,170 670,170" fill="none" stroke="#374151" stroke-width="3"/>
+<polygon points="670,170 650.0,159.0 650.0,181.0" fill="#374151" stroke="#374151" stroke-width="3"/>
+<polyline points="285,281 285,610" fill="none" stroke="#374151" stroke-width="3"/>
+<polygon points="285,610 296.0,590.0 274.0,590.0" fill="#374151" stroke="#374151" stroke-width="3"/>
+<polyline points="285,900 285,782" fill="none" stroke="#374151" stroke-width="3" stroke-dasharray="10 8"/>
+<polygon points="285,782 274.0,802.0 296.0,802.0" fill="white" stroke="#374151" stroke-width="3"/>
+<polyline points="960,591 960,610" fill="none" stroke="#374151" stroke-width="3"/>
+<polygon points="960,610 971.0,590.0 949.0,590.0" fill="#374151" stroke="#374151" stroke-width="3"/>
+<polyline points="960,1030 960,906" fill="none" stroke="#374151" stroke-width="3" stroke-dasharray="10 8"/>
+<polygon points="960,906 949.0,926.0 971.0,926.0" fill="white" stroke="#374151" stroke-width="3"/>
+<polyline points="1260,170 1370,170" fill="none" stroke="#374151" stroke-width="3" stroke-dasharray="10 8"/>
+<polygon points="1370,170 1350.0,159.0 1350.0,181.0" fill="#374151" stroke="#374151" stroke-width="3"/>
+<polyline points="1580,219 1580,390" fill="none" stroke="#374151" stroke-width="3" stroke-dasharray="10 8"/>
+<polygon points="1580,390 1591.0,370.0 1569.0,370.0" fill="white" stroke="#374151" stroke-width="3"/>
+<polyline points="1260,450 1320,450 1320,790 1370,790" fill="none" stroke="#374151" stroke-width="3" stroke-dasharray="10 8"/>
+<polygon points="1370,790 1350.0,779.0 1350.0,801.0" fill="#374151" stroke="#374151" stroke-width="3"/>
+<text x="50" y="1188.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">Суцільна стрілка — використання; пунктир із трикутником — реалізація інтерфейсу.</text>
+<text x="50" y="1220.22" font-family="Consolas,monospace" font-size="21" font-weight="400" text-anchor="start" fill="#111827">Винятки: CourseCapacityExceededException : InvalidOperationException; InvalidGradeValueException : ArgumentException.</text>
+</svg>

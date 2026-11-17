@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1860" height="1390" viewBox="0 0 1860 1390"><rect width="100%" height="100%" fill="white"/>
+<text x="930" y="44.239999999999995" font-family="Consolas,monospace" font-size="32" font-weight="700" text-anchor="middle" fill="#111827">UML — класи предметної області</text>
+<rect x="750" y="85" width="360" height="123" fill="white" stroke="#374151" stroke-width="3"/><rect x="752" y="87" width="356" height="72" fill="#edf2f7"/>
+<text x="930.0" y="109.4" font-family="Consolas,monospace" font-size="20" font-weight="400" text-anchor="middle" fill="#111827">&lt;&lt;abstract&gt;&gt;</text>
+<text x="930.0" y="139.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">Entity</text>
+<polyline points="750,159 1110,159" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="763" y="187.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Id: Guid</text>
+<rect x="260" y="310" width="430" height="172" fill="white" stroke="#374151" stroke-width="3"/><rect x="262" y="312" width="426" height="72" fill="#edf2f7"/>
+<text x="475.0" y="334.4" font-family="Consolas,monospace" font-size="20" font-weight="400" text-anchor="middle" fill="#111827">&lt;&lt;abstract&gt;&gt;</text>
+<text x="475.0" y="364.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">Person</text>
+<polyline points="260,384 690,384" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="273" y="412.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ FullName: string</text>
+<polyline points="260,426 690,426" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="273" y="457.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Describe(): string</text>
+<rect x="1120" y="310" width="520" height="163" fill="white" stroke="#374151" stroke-width="3"/><rect x="1122" y="312" width="516" height="50" fill="#edf2f7"/>
+<text x="1380.0" y="344.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">Course</text>
+<polyline points="1120,362 1640,362" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="1133" y="390.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Title: string</text>
+<text x="1133" y="421.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ TeacherId: Guid</text>
+<text x="1133" y="452.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Capacity: int</text>
+<rect x="70" y="650" width="490" height="181" fill="white" stroke="#374151" stroke-width="3"/><rect x="72" y="652" width="486" height="50" fill="#edf2f7"/>
+<text x="315.0" y="684.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">Student</text>
+<polyline points="70,702 560,702" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="83" y="730.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ RecordBookNumber: string</text>
+<text x="83" y="761.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ GroupName: string</text>
+<polyline points="70,775 560,775" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="83" y="806.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Describe(): string</text>
+<rect x="640" y="650" width="420" height="150" fill="white" stroke="#374151" stroke-width="3"/><rect x="642" y="652" width="416" height="50" fill="#edf2f7"/>
+<text x="850.0" y="684.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">Teacher</text>
+<polyline points="640,702 1060,702" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="653" y="730.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Department: string</text>
+<polyline points="640,744 1060,744" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="653" y="775.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Describe(): string</text>
+<rect x="1170" y="650" width="470" height="132" fill="white" stroke="#374151" stroke-width="3"/><rect x="1172" y="652" width="466" height="50" fill="#edf2f7"/>
+<text x="1405.0" y="684.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">Enrollment</text>
+<polyline points="1170,702 1640,702" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="1183" y="730.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ StudentId: Guid</text>
+<text x="1183" y="761.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ CourseId: Guid</text>
+<rect x="1170" y="1050" width="470" height="163" fill="white" stroke="#374151" stroke-width="3"/><rect x="1172" y="1052" width="466" height="50" fill="#edf2f7"/>
+<text x="1405.0" y="1084.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="middle" fill="#111827">GradeRecord</text>
+<polyline points="1170,1102 1640,1102" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="1183" y="1130.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ StudentId: Guid</text>
+<text x="1183" y="1161.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ CourseId: Guid</text>
+<text x="1183" y="1192.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">+ Points: int</text>
+<polyline points="475,310 475,255 835,255 835,208" fill="none" stroke="#374151" stroke-width="3"/>
+<polygon points="835,208 824.0,228.0 846.0,228.0" fill="white" stroke="#374151" stroke-width="3"/>
+<polyline points="1380,310 1380,255 1020,255 1020,208" fill="none" stroke="#374151" stroke-width="3"/>
+<polygon points="1020,208 1009.0,228.0 1031.0,228.0" fill="white" stroke="#374151" stroke-width="3"/>
+<polyline points="300,650 300,575 410,575 410,482" fill="none" stroke="#374151" stroke-width="3"/>
+<polygon points="410,482 399.0,502.0 421.0,502.0" fill="white" stroke="#374151" stroke-width="3"/>
+<polyline points="830,650 830,575 560,575 560,482" fill="none" stroke="#374151" stroke-width="3"/>
+<polygon points="560,482 549.0,502.0 571.0,502.0" fill="white" stroke="#374151" stroke-width="3"/>
+<polyline points="1640,700 1720,700 1720,150 1110,150" fill="none" stroke="#374151" stroke-width="3"/>
+<polygon points="1110,150 1130.0,161.0 1130.0,139.0" fill="white" stroke="#374151" stroke-width="3"/>
+<polyline points="1640,1120 1780,1120 1780,120 1110,120" fill="none" stroke="#374151" stroke-width="3"/>
+<polygon points="1110,120 1130.0,131.0 1130.0,109.0" fill="white" stroke="#374151" stroke-width="3"/>
+<polyline points="1060,730 1100,730 1100,400 1120,400" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="1068" y="768.04" font-family="Consolas,monospace" font-size="22" font-weight="400" text-anchor="start" fill="#111827">1</text>
+<text x="1070" y="383.04" font-family="Consolas,monospace" font-size="22" font-weight="400" text-anchor="start" fill="#111827">0..*</text>
+<polyline points="1170,730 1110,730 1110,970 300,970 300,831" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="320" y="938.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">1</text>
+<text x="1114" y="843.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">0..*</text>
+<polyline points="1400,650 1400,473" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="1415" y="528.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">1</text>
+<text x="1415" y="623.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">0..*</text>
+<polyline points="1170,1145 1040,1145 1040,1010 200,1010 200,831" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="214" y="943.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">1</text>
+<text x="1060" y="1128.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">0..*</text>
+<polyline points="1500,1050 1500,960 1680,960 1680,430 1640,430" fill="none" stroke="#374151" stroke-width="3"/>
+<text x="1510" y="1008.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">0..*</text>
+<text x="1655" y="508.86" font-family="Consolas,monospace" font-size="23" font-weight="400" text-anchor="start" fill="#111827">1</text>
+<text x="70" y="1221.32" font-family="Consolas,monospace" font-size="26" font-weight="700" text-anchor="start" fill="#111827">Обмеження</text>
+<text x="70" y="1258.04" font-family="Consolas,monospace" font-size="22" font-weight="400" text-anchor="start" fill="#111827">Enrollment: унікальна пара StudentId + CourseId.</text>
+<text x="70" y="1288.04" font-family="Consolas,monospace" font-size="22" font-weight="400" text-anchor="start" fill="#111827">GradeRecord: одна підсумкова оцінка на зарахування.</text>
+<text x="70" y="1318.04" font-family="Consolas,monospace" font-size="22" font-weight="400" text-anchor="start" fill="#111827">Points: 0–100; прохідний бал: 60.</text>
+<text x="70" y="1348.04" font-family="Consolas,monospace" font-size="22" font-weight="400" text-anchor="start" fill="#111827">Course.Capacity обмежує кількість зарахувань.</text>
+</svg>

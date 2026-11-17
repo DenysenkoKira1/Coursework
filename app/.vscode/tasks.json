@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label":"Зібрати", "type":"process", "command":"powershell", "args":["-NoProfile","-ExecutionPolicy","Bypass","-File","${workspaceFolder}/dotnet.ps1","build","AcademicRecords.sln","--configuration","Release"], "problemMatcher":"$msCompile", "group":{"kind":"build","isDefault":true}},
+    {"label":"Запустити", "type":"process", "command":"powershell", "args":["-NoProfile","-ExecutionPolicy","Bypass","-File","${workspaceFolder}/dotnet.ps1","run","--project","src/AcademicRecords.Console","--configuration","Release"], "problemMatcher":[]},
+    {"label":"Демонстрація", "type":"process", "command":"powershell", "args":["-NoProfile","-ExecutionPolicy","Bypass","-File","${workspaceFolder}/dotnet.ps1","run","--project","src/AcademicRecords.Console","--configuration","Release","--","--demo","--data","data/demo.json"], "problemMatcher":[]},
+    {"label":"Перевірки", "type":"process", "command":"powershell", "args":["-NoProfile","-ExecutionPolicy","Bypass","-File","${workspaceFolder}/dotnet.ps1","run","--project","tests/AcademicRecords.Tests","--configuration","Release"], "problemMatcher":[]}
+  ]
+}
