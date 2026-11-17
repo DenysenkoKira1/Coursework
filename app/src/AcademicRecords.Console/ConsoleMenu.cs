@@ -37,8 +37,7 @@ internal sealed class ConsoleMenu(AcademicService service, IDataStore store)
                     case 7: PrintRanking(); break;
                     case 8: PrintDebtors(); break;
                     case 9:
-                        PrintStudents(service.FindStudents(ConsoleInput.Text("ПІБ, група або номер
-                        залікової: ")));
+                        PrintStudents(service.FindStudents(ConsoleInput.Text("ПІБ, група або номер залікової: ")));
                         break;
                     case 10: Save(); break;
                 }
@@ -46,8 +45,7 @@ internal sealed class ConsoleMenu(AcademicService service, IDataStore store)
             catch (EndOfStreamException)
             {
                 try { Save(); return 0; }
-                catch (Exception ex) when (Expected(ex)) { Console.Error.WriteLine($"Не вдалося
-                зберегти дані: {ex.Message}"); return 1; }
+                catch (Exception ex) when (Expected(ex)) { Console.Error.WriteLine($"Не вдалося зберегти дані: {ex.Message}"); return 1; }
             }
             catch (Exception ex) when (Expected(ex))
             {
@@ -64,8 +62,7 @@ internal sealed class ConsoleMenu(AcademicService service, IDataStore store)
     private void Save()
     {
         store.Save(service.Export());
-        Console.WriteLine("Дані збережено у JSON. Попередню версію збережено у .bak, якщо файл уже
-        існував.");
+        Console.WriteLine("Дані збережено у JSON. Попередню версію збережено у .bak, якщо файл уже існував.");
     }
 //Виводить список студентів і загальну кількість записів
     private static void PrintStudents(IReadOnlyList<Student> students)
@@ -82,8 +79,7 @@ internal sealed class ConsoleMenu(AcademicService service, IDataStore store)
         {
             case 1: PrintStudents(service.Students); break;
             case 2:
-                service.AddStudent(ConsoleInput.Text("ПІБ:"),ConsoleInput.Text("Номерзалікової:"), 
-                ConsoleInput.Text("Група: "));
+                service.AddStudent(ConsoleInput.Text("ПІБ: "), ConsoleInput.Text("Номер залікової: "), ConsoleInput.Text("Група: "));
                 Console.WriteLine("Студента додано."); break;
             case 3:
                 var student = PickStudent();
@@ -131,10 +127,8 @@ internal sealed class ConsoleMenu(AcademicService service, IDataStore store)
             case 1:
                 foreach (var listedCourse in service.Courses)
                 {
-                    Console.WriteLine($"{listedCourse.Title} | місця 
-                    {service.EnrolledCount(listedCourse.Id)}/{listedCourse.Capacity}");
-                    Console.WriteLine($"  Викладач: {service.Teachers.Single(x => x.Id ==
-                    listedCourse.TeacherId).FullName}");
+                    Console.WriteLine($"{listedCourse.Title} | місця {service.EnrolledCount(listedCourse.Id)}/{listedCourse.Capacity}");
+                    Console.WriteLine($"  Викладач: {service.Teachers.Single(x => x.Id == listedCourse.TeacherId).FullName}");
                 }
                 Console.WriteLine($"Усього: {service.Courses.Count}"); break;
             case 2:
@@ -193,12 +187,13 @@ internal sealed class ConsoleMenu(AcademicService service, IDataStore store)
         {
             var course = service.Courses.Single(x => x.Id == enrollment.CourseId);
             var grade = service.Grades.SingleOrDefault(x => x.StudentId == student.Id && x.CourseId == course.Id);
-            Console.WriteLine($"{course.Title}: {(grade is null ? "не виставлено — БОРГ" : $"{grade.Points} — {(grade.Points >=
-            AcademicService.PassingGrade ? "зараховано" : "БОРГ")}")}");
+            var gradeStatus = grade is null
+                ? "не виставлено — БОРГ"
+                : $"{grade.Points} — {(grade.Points >= AcademicService.PassingGrade ? "зараховано" : "БОРГ")}";
+            Console.WriteLine($"{course.Title}: {gradeStatus}");
         }
         var result = service.GetResult(student.Id);
-        Console.WriteLine($"Середній бал: {(result.Average?.ToString("F2") ?? "немає оцінок")}; дисциплін: {result.EnrollmentCount}; боргів:
-        {result.DebtCount}");
+        Console.WriteLine($"Середній бал: {(result.Average?.ToString("F2") ?? "немає оцінок")}; дисциплін: {result.EnrollmentCount}; боргів: {result.DebtCount}");
     }
 //Виводить рейтинг студентів без академічних боргів
     private void PrintRanking()

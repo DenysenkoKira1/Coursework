@@ -5,10 +5,9 @@
     "type":"coreclr",
     "request":"launch",
     "preLaunchTask":"Зібрати",
-    "program":"${workspaceFolder}/src/AcademicRecords.Console/bin/Release/net10.0/AcademicRecords.Console.dll",
+    "program":"${workspaceFolder}/src/AcademicRecords.Console/bin/Release/net8.0/AcademicRecords.Console.dll",
     "cwd":"${workspaceFolder}",
     "console":"integratedTerminal",
-    "args":[],
-    "env":{"DOTNET_ROOT":"${workspaceFolder}/../.tools/dotnet"}
+    "args":[]
   }]
 }

@@ -2,7 +2,7 @@
 
 **Тема:** Деканат та успішність студентів.
 
-Це консольний застосунок на C# для керування студентами, викладачами, дисциплінами, зарахуваннями та оцінками. Проєкт використовує .NET 10 SDK.
+Це консольний застосунок на C# для керування студентами, викладачами, дисциплінами, зарахуваннями та оцінками. Проєкт використовує .NET 8 SDK.
 
 ## Склад репозиторію
 
@@ -13,7 +13,7 @@
 
 ## Запуск
 
-Установіть .NET 10 SDK і відкрийте папку `app` у Visual Studio Code.
+Установіть .NET 8 SDK і відкрийте папку `app` у Visual Studio Code.
 
 - `DEMO.cmd` — запуск із демонстраційними даними.
 - `RUN.cmd` — звичайний запуск.
@@ -22,7 +22,7 @@
 Команди PowerShell із папки `app`:
 
 ```powershell
-.\dotnet.ps1 build AcademicRecords.sln -c Release
+.\dotnet.ps1 build AcademicRecords.sln -c Release -m:1
 .\dotnet.ps1 run --project src/AcademicRecords.Console -c Release -- --demo
 .\dotnet.ps1 run --project tests/AcademicRecords.Tests -c Release
 ```

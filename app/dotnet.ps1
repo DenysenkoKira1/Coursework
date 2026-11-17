@@ -3,7 +3,7 @@ $localSdk = Join-Path $PSScriptRoot '..\.tools\dotnet\dotnet.exe'
 if (Test-Path -LiteralPath $localSdk) { $dotnetPath = $localSdk }
 else {
     $found = Get-Command dotnet -ErrorAction SilentlyContinue
-    if (-not $found) { throw 'Потрібен .NET 10 SDK: https://dotnet.microsoft.com/download/dotnet/10.0' }
+    if (-not $found) { throw 'Потрібен .NET 8 SDK: https://dotnet.microsoft.com/download/dotnet/8.0' }
     $dotnetPath = $found.Source
 }
 $env:DOTNET_CLI_HOME = Join-Path $PSScriptRoot '..\.tools\cli-home'

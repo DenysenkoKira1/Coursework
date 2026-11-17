@@ -28,8 +28,7 @@ internal static class ConsoleInput
 //Показує список і повертає елемент, обраний користувачем
     public static T Pick<T>(IReadOnlyList<T> items, Func<T, string> label)
     {
-        if (items.Count == 0) throw new InvalidOperationException("Список порожній. Спочатку
-        додайте записи.");
+        if (items.Count == 0) throw new InvalidOperationException("Список порожній. Спочатку додайте записи.");
         for (var i = 0; i < items.Count; i++) Console.WriteLine($"{i + 1}. {label(items[i])}");
         return items[Number("Оберіть номер: ", 1, items.Count) - 1];
     }

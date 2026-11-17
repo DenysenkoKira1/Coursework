@@ -2,6 +2,7 @@
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Reflection;
 using AcademicRecords.Core.Interfaces;
 using AcademicRecords.Core.Models;
 
@@ -15,8 +16,7 @@ public sealed class JsonDataStore : IDataStore
         WriteIndented = true,
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
         PropertyNameCaseInsensitive = false,
-        UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow,
-        RespectRequiredConstructorParameters = true
+        UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow
     };
 //Зберігає повний шлях до файлу даних
     public JsonDataStore(string path) => _path = Path.GetFullPath(path);
@@ -26,10 +26,46 @@ public sealed class JsonDataStore : IDataStore
     {
         if (!File.Exists(_path)) return new AcademicData();
         using var stream = File.OpenRead(_path);
-        var data = JsonSerializer.Deserialize<AcademicData>(stream, Options)
+        using var document = JsonDocument.Parse(stream);
+        EnsureConstructorParametersPresent(document.RootElement);
+        var data = JsonSerializer.Deserialize<AcademicData>(document.RootElement, Options)
             ?? throw new JsonException("Файл даних містить null.");
         AcademicService.FromData(data);
         return data;
+    }
+
+//Перевіряє, що у JSON присутні поля, потрібні конструкторам моделей
+    private static void EnsureConstructorParametersPresent(JsonElement root)
+    {
+        if (root.ValueKind != JsonValueKind.Object) return;
+
+        foreach (var collection in typeof(AcademicData).GetProperties())
+        {
+            if (!root.TryGetProperty(collection.Name, out var items) || items.ValueKind != JsonValueKind.Array)
+                continue;
+
+            var itemType = collection.PropertyType.GetGenericArguments().FirstOrDefault();
+            var constructor = itemType?.GetConstructors(BindingFlags.Public | BindingFlags.Instance)
+                .OrderByDescending(candidate => candidate.GetParameters().Length)
+                .FirstOrDefault();
+            if (itemType is null || constructor is null) continue;
+
+            foreach (var item in items.EnumerateArray())
+            {
+                if (item.ValueKind != JsonValueKind.Object) continue;
+                foreach (var parameter in constructor.GetParameters())
+                {
+                    if (parameter.IsOptional) continue;
+                    var property = itemType.GetProperty(parameter.Name!, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
+                    if (property is null) continue;
+                    var propertyName = property.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name
+                        ?? Options.PropertyNamingPolicy?.ConvertName(property.Name)
+                        ?? property.Name;
+                    if (!item.TryGetProperty(propertyName, out _))
+                        throw new JsonException($"У JSON відсутнє обов'язкове поле '{propertyName}'.");
+                }
+            }
+        }
     }
 
 //Перевіряє дані та записує JSON із резервною копією попереднього файлу
