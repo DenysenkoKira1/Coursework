@@ -11,8 +11,9 @@
 Короткий опис проєкту й порядок запуску наведено в `../README.md`; діаграми розміщено в `../docs/diagrams`.
 
 ```powershell
-.\dotnet.ps1 build AcademicRecords.sln -c Release -m:1
-.\dotnet.ps1 run --project src/AcademicRecords.Console -c Release -- --demo --data data/demo.json
+dotnet build AcademicRecords.sln -c Release -m:1
+dotnet run --project src/AcademicRecords.Console -c Release
+dotnet run --project src/AcademicRecords.Console -c Release -- --data samples/demo.json
 ```
 
 Для перенесеного комплекту потрібен .NET 8 SDK. Зовнішні NuGet-пакети не використовуються.
